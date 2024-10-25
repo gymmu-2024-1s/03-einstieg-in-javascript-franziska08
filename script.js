@@ -103,7 +103,7 @@ export function aufgabe08(args) {
 
     if (currentElement === "e") {
       //do nothing
-      result.push(3)
+      result.push(3) //3 ersetzt "e"
     } else {
       result.push(currentElement)
     }
@@ -111,3 +111,22 @@ export function aufgabe08(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+
+export function aufgabe09(args) {
+  const input = args
+  const result = []
+
+  let is6long = false
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    count = count + 1
+  }
+
+  if (count === 6) {
+    is6long = true
+  }
+  return is6long
+}
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
