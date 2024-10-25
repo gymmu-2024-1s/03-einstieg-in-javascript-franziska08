@@ -93,5 +93,21 @@ export function aufgabe04(args) {
   }
   return result.join("")
 }
-
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
+
+export function aufgabe08(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === "e") {
+      //do nothing
+      result.push(3)
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
