@@ -95,9 +95,30 @@ export function aufgabe04(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
+export function aufgabe05(args) {
+  const input = args
+  const result = []
+
+  let hasUpperCaseLetter = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const upperCaseVersion = currentElement.toUpperCase()
+    if (currentElement === ".") {
+      // mache nichts
+    } else if (currentElement === upperCaseVersion) {
+      hasUpperCaseLetter = true
+    }
+  }
+
+  return hasUpperCaseLetter
+}
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
 export function aufgabe08(args) {
   const input = args
   const result = []
+
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
