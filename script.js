@@ -68,9 +68,9 @@ export function aufgabe03(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      count = count + 1
+      count = count + 1 //zählt alle "e"
     } else if (currentElement === "E") {
-      count++
+      count++ //kurzform von count = count+1
     }
   }
 
@@ -113,19 +113,20 @@ export function aufgabe08(args) {
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
 export function aufgabe09(args) {
-  const input = args
+  const input = args //speichert den Wert von args in der Variable input, damit wird für uns klarer, was wir gerade bearbeiten.
   const result = []
 
-  let is6long = false
-  let count = 0
+  let is6long = false //zählt ob der Text 6 Zeichen lang ist oder nicht
+  let count = 0 // lässt den Anfang bei 0 starten
 
   for (let i = 0; i < input.length; i++) {
+    // "i" ersetzt 0. Dann wird die Kurzform angewendet.
     const currentElement = input[i]
     count = count + 1
   }
 
   if (count === 6) {
-    is6long = true
+    is6long = true // bestimmt ob die Zeichenanzahl dieser Anzahl entspricht
   }
   return is6long
 }
