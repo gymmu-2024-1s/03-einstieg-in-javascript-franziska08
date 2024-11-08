@@ -287,5 +287,12 @@ export function aufgabe20(args) {
   const input = args
   const result = []
   //Prüfe ob nach jedem Zeichen ein Leerschlag kommt.
+  let Leerschlag = false
+  let count = 0
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    let Leerschlag = true
+    result.push(currentElement)
+  }
 }
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
