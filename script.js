@@ -96,22 +96,7 @@ export function aufgabe04(args) {
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
-  const input = args
-  const result = []
-
-  let hasUpperCaseLetter = false
-
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    const upperCaseVersion = currentElement.toUpperCase()
-    if (currentElement === ".") {
-      // mache nichts
-    } else if (currentElement === upperCaseVersion) {
-      hasUpperCaseLetter = true
-    }
-  }
-
-  return hasUpperCaseLetter
+  return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
@@ -251,7 +236,14 @@ linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 export function aufgabe16(args) {
   const input = args
   const result = []
-
+  //Lesen Sie die Eingabe bis zum Zeichen '$' als ersten Teil einer Liste ein, und den Resr als den zweiten Teil.
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "$") {
+      break
+    }
+    result.push(currentElement)
+  }
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
@@ -296,5 +288,12 @@ export function aufgabe20(args) {
   }
   return allGood
 }
-
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+
+export function aufgabe21(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
