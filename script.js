@@ -293,6 +293,11 @@ linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
 export function aufgabe21(args) {
   const input = args
   const result = []
+  //kehre die Eingabe um
+  for (let i = input.length - 1; i >= 0; i--) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
 
   return result.join("")
 }
