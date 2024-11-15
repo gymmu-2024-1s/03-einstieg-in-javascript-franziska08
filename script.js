@@ -251,14 +251,7 @@ linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 export function aufgabe16(args) {
   const input = args
   const result = []
-  //lesen Sie die Eingabe bis zum Zeichen '$' als ersten Teil einer Liste ein, und dann den Rest als zweiten Teil
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (currentElement === "$") {
-      break
-    }
-    result.push(currentElement)
-  }
+
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
@@ -286,13 +279,22 @@ linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
 export function aufgabe20(args) {
   const input = args
   const result = []
-  //Prüfe ob nach jedem Zeichen ein Leerschlag kommt.
-  let Leerschlag = false
-  let count = 0
+
+  let allGood = true
+
+  //prüfe ob nach jeden "." ein Leerschlag kommt.
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    let Leerschlag = true
-    result.push(currentElement)
+    if (currentElement === ".") {
+      //prüfe ob das nächste Zeichen ein Leerschlag ist.
+      if (input[i + 1] === " ") {
+        //do nothing
+      } else {
+        allGood = false
+      }
+    }
   }
+  return allGood
 }
+
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
