@@ -1,3 +1,4 @@
+import { GitNotFoundError } from "vitest/node.js"
 import { linkupExerciseHandler } from "./utils"
 
 /**
@@ -100,6 +101,36 @@ export function aufgabe05(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  //sollte testen ob ein Sonderzeichen im Text vorkommt und wenn ja, die Zeichenanzahl ermitteln.
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(currentElement)) {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
+
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+//sollte das Wort 'und' erhalten
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  if (currentElement === "und") {
+    result.push("Und")
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+
 export function aufgabe08(args) {
   const input = args
   const result = []
@@ -130,7 +161,6 @@ export function aufgabe09(args) {
     const currentElement = input[i]
     count = count + 1
   }
-
   if (count === 6) {
     is6long = true // bestimmt ob die Zeichenanzahl dieser Anzahl entspricht
   }
