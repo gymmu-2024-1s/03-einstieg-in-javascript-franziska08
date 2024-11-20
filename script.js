@@ -1,4 +1,3 @@
-import { GitNotFoundError } from "vitest/node.js"
 import { linkupExerciseHandler } from "./utils"
 
 /**
@@ -101,36 +100,6 @@ export function aufgabe05(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
-export function aufgabe06(args) {
-  const input = args
-  const result = []
-  //sollte testen ob ein Sonderzeichen im Text vorkommt und wenn ja, die Zeichenanzahl ermitteln.
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(currentElement)) {
-      result.push(currentElement)
-    }
-  }
-  return result.join("")
-}
-linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
-
-export function aufgabe07(args) {
-  const input = args
-  const result = []
-
-  return result.join("")
-}
-//sollte das Wort 'und' erhalten
-for (let i = 0; i < input.length; i++) {
-  const currentElement = input[i]
-  if (currentElement === "und") {
-    result.push("Und")
-  }
-  return result.join("")
-}
-linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
-
 export function aufgabe08(args) {
   const input = args
   const result = []
@@ -161,6 +130,7 @@ export function aufgabe09(args) {
     const currentElement = input[i]
     count = count + 1
   }
+
   if (count === 6) {
     is6long = true // bestimmt ob die Zeichenanzahl dieser Anzahl entspricht
   }
@@ -332,3 +302,57 @@ export function aufgabe21(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+  //sollte alle Zeichen aus der Eingabe mit '_' ersetzten bis zum ersten 'k'
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "k") {
+      break
+    }
+    result.push("_")
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function aufgabe23(args) {
+  const input = args
+  const result = [] //Leere Liste, in der wir das Resultat anhängen
+  const firstelement = input[0]
+
+  // Hänge firstelement an die Liste an
+  result.push(firstelement)
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+
+  result.push(firstelement) //Schreibe das erste Zeichen am Ende
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
+
+export function aufgabe24(args) {
+  // Vertausche das erste und das letzte Zeichen
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === 0) {
+      result.push(input[input.length - 1])
+    } else if (i === input.length - 1) {
+      result.push(input[0])
+    } else {
+      result.push(currentElement)
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
