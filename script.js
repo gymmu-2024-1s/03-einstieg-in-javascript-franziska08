@@ -306,14 +306,18 @@ linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
 export function aufgabe22(args) {
   const input = args
   const result = []
-  //sollte alle Zeichen aus der Eingabe mit '_' ersetzten bis zum ersten 'k'
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (currentElement === "k") {
-      break
+
+  for (const currentElement of args) {
+    if (currentElement === "") {
+      result.push("_") // Ersetze jedes Zeichen durch "_"
+    } else if (currentElement === "") {
+      // do nothing
+    } else {
+      result.push(currentElement) //Behalte alle anderen Eingaben bei
     }
-    result.push("_")
   }
+
+  return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
@@ -337,6 +341,23 @@ export function aufgabe23(args) {
 
 linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
 
+export function aufgabe25(args) {
+  const input = args
+  const result = []
+  //Lösche das Zeichen welches in der Mitte des Textes steht
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === Math.floor(input.length / 2)) {
+      // do nothing
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
+
 export function aufgabe24(args) {
   // Vertausche das erste und das letzte Zeichen
   const input = args
@@ -356,3 +377,16 @@ export function aufgabe24(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
+
+export function aufgabe27(args) {
+  if (args.length !== 1) {
+    return false
+  }
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] < "0" || args[i] > "9") {
+      return false
+    }
+  }
+  return true
+}
+linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
