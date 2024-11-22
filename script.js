@@ -81,17 +81,17 @@ linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 export function aufgabe04(args) {
   const input = args
   const result = []
-
+  // Zähle alle Wörter des Textes und speichere die Anzahl in einer Variable
   let count = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === "einfachtxtur") {
+    if (currentElement === " ") {
       count = count + 1
-    } else if (currentElement === "E") {
-      count++
     }
   }
-  return result.join("")
+  if (count === 0) {
+  }
+  return count + 1
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
@@ -99,6 +99,23 @@ export function aufgabe05(args) {
   return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  let hasSonderzeichen = false
+  // Schreibe eine Funktion, die testet ob ein Sonderzeichen vorkommt
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii >= 33 && ascii <= 47) {
+      hasSonderzeichen = true
+    }
+  }
+  return hasSonderzeichen
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
 export function aufgabe08(args) {
   const input = args
@@ -246,6 +263,7 @@ export function aufgabe16(args) {
   }
   return result.join("")
 }
+
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
 export function aufgabe19(args) {
@@ -306,17 +324,11 @@ linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
 export function aufgabe22(args) {
   const input = args
   const result = []
-
-  for (const currentElement of args) {
-    if (currentElement === "") {
-      result.push("_") // Ersetze jedes Zeichen durch "_"
-    } else if (currentElement === "") {
-      // do nothing
-    } else {
-      result.push(currentElement) //Behalte alle anderen Eingaben bei
-    }
+  //Sollte alle Zeichen aus der Eingabe '_' ersetzten
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push("_")
   }
-
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
@@ -341,23 +353,6 @@ export function aufgabe23(args) {
 
 linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
 
-export function aufgabe25(args) {
-  const input = args
-  const result = []
-  //Lösche das Zeichen welches in der Mitte des Textes steht
-
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (i === Math.floor(input.length / 2)) {
-      // do nothing
-    } else {
-      result.push(currentElement)
-    }
-  }
-  return result.join("")
-}
-linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
-
 export function aufgabe24(args) {
   // Vertausche das erste und das letzte Zeichen
   const input = args
@@ -378,15 +373,40 @@ export function aufgabe24(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
 
-export function aufgabe27(args) {
-  if (args.length !== 1) {
-    return false
+export function aufgabe25(args) {
+  const input = args
+  const result = []
+  //Lösche das Zeichen welches in der Mitte des Textes steht
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === Math.floor(input.length / 2)) {
+      // do nothing
+    } else {
+      result.push(currentElement)
+    }
   }
-  for (let i = 0; i < args.length; i++) {
-    if (args[i] < "0" || args[i] > "9") {
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
+
+export function aufgabe27(args) {
+  const input = args
+  const result = []
+  //sollte testen ob die Eingabe eine Zahl ist
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement >= "0" && currentElement <= "9") {
+      result.push(currentElement)
+    }
+  }
+  //sollte testen ob die Eingabe keine Zahl ist
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement < "0" || currentElement > "9") {
       return false
     }
   }
-  return true
+  return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
