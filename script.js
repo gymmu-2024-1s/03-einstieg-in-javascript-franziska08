@@ -287,23 +287,24 @@ export function aufgabe16(args) {
 
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
-export function aufgabe18(args) {
+export function aufgabe17(args) {
   const input = args
   const result = []
-  //Sollte [...] schreiben
+  // Schreibe hinter jedem Wort ein ","
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === "[") {
-      result.push("[")
-    }
-    if (currentElement === "]") {
-      result.push("]")
+    if (currentElement === "") {
+      result.push(",")
+    } else {
+      result.push(currentElement)
     }
   }
+
   return result.join("")
 }
 
-linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
+linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
+
 export function aufgabe19(args) {
   const input = args
   const result = []
@@ -466,3 +467,10 @@ export function aufgabe27(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
+
+export function aufgabe28(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
