@@ -253,7 +253,7 @@ export function aufgabe14(args) {
       return i
     }
   }
-  return -1 //return -1 if there are less than 3 e's
+  return -1 //gibt -1 an, wenn dort weniger als 3 e's sind
 }
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 
@@ -275,7 +275,7 @@ linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 export function aufgabe16(args) {
   const input = args
   const result = []
-  //Lesen Sie die Eingabe bis zum Zeichen '$' als ersten Teil einer Liste ein, und den Resr als den zweiten Teil.
+  //Lesen Sie die Eingabe bis zum Zeichen '$' als ersten Teil einer Liste ein, und den Rest als den zweiten Teil.
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "$") {
@@ -314,7 +314,7 @@ export function aufgabe19(args) {
 
     //sollte 'aa' heissen.
     if (currentElement === "aa") {
-      result.push("aa")
+      result.push("aa") //Gibt "aa" wieder an
     }
   }
   // jedes Zeichen sollte verdoppelt werden
