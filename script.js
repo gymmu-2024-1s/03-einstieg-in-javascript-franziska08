@@ -74,7 +74,7 @@ export function aufgabe03(args) {
     }
   }
 
-  return count
+  return count // gibt die Anzahl der "e" zurück
 }
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 
@@ -91,29 +91,30 @@ export function aufgabe04(args) {
   }
   if (count === 0) {
   }
-  return count + 1
+  return count + 1 //gibt die Anzahl der Wörter zurück
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
   return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
+  //Von KI gelöst
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
 export function aufgabe06(args) {
   const input = args
   const result = []
-  let hasSonderzeichen = false
+  let hasSonderzeichen = false //sagt das es keine Sonderzeichen gibt, um später zu testen, ob es doch Sonderzeichen gibt
   // Schreibe eine Funktion, die testet ob ein Sonderzeichen vorkommt
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii >= 33 && ascii <= 47) {
-      hasSonderzeichen = true
+      hasSonderzeichen = true // Wenn ein Sonderzeichen gefunden wird, wird hasSonderzeichen auf true gesetzt
     }
   }
-  return hasSonderzeichen
+  return hasSonderzeichen //Sagt ob Sonderzeichen vorhanden sind
 }
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
@@ -126,12 +127,12 @@ export function aufgabe07(args) {
     if (currentElement === "u") {
       if (input[i + 1] === "n") {
         if (input[i + 2] === "d") {
-          return true
+          return true //gibt true zurück, wenn das Wort erhalten ist
         }
       }
     }
   }
-  return false
+  return false // gibt false zuück wenn das Wort nicht erhalten ist
 }
 linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
 
@@ -232,10 +233,10 @@ export function aufgabe13(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      lastIndex = i
+      lastIndex = i // Wenn e gefunden wird der Index gespeichert
     }
   }
-  return lastIndex
+  return lastIndex // gibt den Index zurück
 }
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
