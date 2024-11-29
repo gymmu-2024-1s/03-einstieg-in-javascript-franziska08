@@ -470,7 +470,28 @@ linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function aufgabe28(args) {
   const input = args
-  const result = []
+  let num1, num2
 
-  return result.join("")
+  // Suche nach den ersten beiden Zahlen im Array
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (!isNaN(currentElement)) {
+      // Überprüfe, ob das Element eine Zahl ist
+      if (!num1) {
+        num1 = parseInt(currentElement)
+      } else if (!num2) {
+        num2 = parseInt(currentElement)
+        break
+      }
+    }
+  }
+
+  // Wenn zwei Zahlen gefunden wurden, addiere sie
+  if (num1 !== undefined && num2 !== undefined) {
+    return num1 + num2
+  } else {
+    return "Keine zwei Zahlen gefunden"
+  }
 }
+
+linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
