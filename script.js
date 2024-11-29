@@ -259,7 +259,7 @@ linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 export function aufgabe15(args) {
   const input = args
   const result = []
-  //Lesen Sie die Eingabe nur bis zum ersten Leerzeichen ein
+  //Sollte die Eingabe nur bis zum ersten Leerzeichen einlesen
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === " ") {
@@ -267,7 +267,6 @@ export function aufgabe15(args) {
     }
     result.push(currentElement)
   }
-
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
@@ -288,6 +287,23 @@ export function aufgabe16(args) {
 
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
+export function aufgabe18(args) {
+  const input = args
+  const result = []
+  //Sollte [...] schreiben
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "[") {
+      result.push("[")
+    }
+    if (currentElement === "]") {
+      result.push("]")
+    }
+  }
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
 export function aufgabe19(args) {
   const input = args
   const result = []
