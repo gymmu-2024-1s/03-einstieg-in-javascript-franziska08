@@ -496,3 +496,38 @@ export function aufgabe28(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
+
+export function eigeneaufgabe(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === "e") {
+      //do nothing
+      result.push(2) //2 ersetzt "e"
+    } else {
+      result.push(currentElement)
+    }
+    if (currentElement === "a") {
+      //do nothing
+      result.push(1) //1 ersetzt "a"
+    }
+    if (currentElement === "i") {
+      //do nothing
+      result.push(4) //4 ersetzt "i"
+    }
+    if (currentElement === "n") {
+      //do nothing
+      result.push(5) //5 ersetzt "n"
+    }
+    if (currentElement === "t") {
+      //do nothing
+      result.push(6) //6 ersetzt "t"
+    }
+  }
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
