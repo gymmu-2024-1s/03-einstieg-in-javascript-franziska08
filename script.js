@@ -441,6 +441,7 @@ export function aufgabe26(args) {
     } else if (i === 1) {
       result.push(input[0])
     } else {
+      //do nothing
       result.push(currentElement)
     }
   }
