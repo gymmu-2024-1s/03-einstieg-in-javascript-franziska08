@@ -500,7 +500,7 @@ linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
 
 export function eigeneaufgabe(args) {
   const input = args
-  const mapping = { e: 1, a: 2, i: 4, n: 5, t: 6 }
+  const mapping = { e: 1, a: 2, f: 3, i: 4, n: 5, t: 6 }
   const result = []
 
   for (let i = 0; i < input.length; i++) {
