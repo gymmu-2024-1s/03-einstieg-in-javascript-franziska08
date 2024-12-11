@@ -534,3 +534,11 @@ export function Bubblesort(args) {
   return result
 }
 linkupExerciseHandler("[data-click=Bubblesort]", Bubblesort)
+
+export function Selectionsort(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
