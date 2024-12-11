@@ -536,9 +536,30 @@ export function Bubblesort(args) {
 linkupExerciseHandler("[data-click=Bubblesort]", Bubblesort)
 
 export function Selectionsort(args) {
-  const input = args
+  const input = args.split("")
   const result = []
+  let n = input.length
+  for (let i = 0; i < n - 1; i++) {
+    // Assume the current position holds
+    // the minimum element
+    let min_idx = i
 
-  return result.join("")
+    // Iterate through the unsorted portion
+    // to find the actual minimum
+    for (let j = i + 1; j < n; j++) {
+      if (input[j] < input[min_idx]) {
+        // Update min_idx if a smaller element is found
+        min_idx = j
+      }
+    }
+
+    // Move minimum element to its
+    // correct position
+    let temp = input[i]
+    input[i] = input[min_idx]
+    input[min_idx] = temp
+  }
+  return input
 }
+
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
