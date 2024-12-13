@@ -563,3 +563,12 @@ export function Selectionsort(args) {
 }
 
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
+
+export function Radixsort(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {}
+  return result
+}
+
+linkupExerciseHandler("[data-click=Radixsort]", Radixsort)
