@@ -576,6 +576,28 @@ export function eigeneaufgabe(args) {
 }
 linkupExerciseHandler("[data-click=eigeneaufgabe]", eigeneaufgabe) //Von Codium verbessert, damit es auch funktioniert hat
 
+export function Eigeneaufgabe(args) {
+  const input = args
+  const result = []
+
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // jedes Zeichen sollte verfünfacht werden
+    result.push(currentElement)
+    result.push(currentElement)
+    result.push(currentElement)
+    result.push(currentElement)
+    result.push(currentElement)
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=Eigeneaufgabe]", Eigeneaufgabe)
+
 export function Bubblesort(args) {
   const text = args
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
