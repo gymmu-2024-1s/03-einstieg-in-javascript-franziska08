@@ -577,15 +577,14 @@ export function eigeneaufgabe(args) {
 linkupExerciseHandler("[data-click=eigeneaufgabe]", eigeneaufgabe) //Von Codium verbessert, damit es auch funktioniert hat
 
 export function Eigeneaufgabe(args) {
+  //Jedes Zeichen sollte verfünfacht werden
   const input = args
   const result = []
-
   let count = 0
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    // jedes Zeichen sollte verfünfacht werden
     result.push(currentElement)
     result.push(currentElement)
     result.push(currentElement)
