@@ -654,3 +654,24 @@ export function Radixsort(args) {
 }
 
 linkupExerciseHandler("[data-click=Radixsort]", Radixsort)
+
+function Bucketsort(args) {
+  let n = args.length,
+    buckets = Array.from({ length: n }, () => [])
+
+  // Verteile die Elemente auf die Buckets
+  arr.forEach((num) => buckets[Math.floor(n * num)].push(num))
+
+  // Sortiere die Buckets und füge sie wieder zusammen
+  args.length = 0
+  buckets.forEach((bucket) => {
+    insertionSort(bucket)
+    args.push(...bucket)
+  })
+}
+
+let args = [0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434]
+bucketSort(args)
+console.log("Sorted array is:", args.join(" "))
+
+linkupExerciseHandler("[data-click=bucketSort]", Bucketsort)
