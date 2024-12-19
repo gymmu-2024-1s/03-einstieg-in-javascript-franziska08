@@ -81,7 +81,7 @@ linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 export function aufgabe04(args) {
   const input = args
   const result = []
-  //Wir filtern die Eingabe so, dass nur noch Buchstaben und Leerzeichen übrig
+  //Man filtert die Eingabe so, dass nur noch Buchstaben und Leerzeichen übrig
   //bleiben
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -99,7 +99,7 @@ export function aufgabe04(args) {
     }
   }
 
-  //Jetzt können wir noch mehrere Leerzeichen am Stück haben, die müssen wir
+  //Jetzt kann man noch mehrere Leerzeichen am Stück haben, die muss man
   //noch filtern
 
   const result2 = []
@@ -108,12 +108,12 @@ export function aufgabe04(args) {
     const nextElement = result[i + 1]
 
     if (currentElement === " " && nextElement === " ") {
-      //hier sind 2 Leerzeichen hintereinadner , wir ignorieren das erste
+      //hier sind 2 Leerzeichen hintereinadner , deshalb ignoriere das erste
     } else {
       result2.push(currentElement)
     }
   }
-  //Jetzt könne wir die Leerzeichen zählen
+  //Jetzt kann man die Leerzeichen zählen
   let count = 0
   for (let i = 0; i < result.length; i++) {
     const currentElement = result2[i]
@@ -121,7 +121,7 @@ export function aufgabe04(args) {
       count = count + 1
     }
   }
-  //Da es ein Wort mehr wie Leerzeichen gibt, geben wir Leerzeichen+1 zurück
+  //Da es ein Wort mehr wie Leerzeichen gibt, gibt man Leerzeichen+1 zurück
   return count + 1
 }
 
@@ -327,8 +327,8 @@ export function aufgabe17(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    //Wenn wir auf ein Leerzeichen treffen, dann schreiben wir alles was wir bisher gemacht haben in die Liste
-    //jetzt haben, in die totallist
+    //Wenn manauf ein Leerzeichen trifft, dann schreibt man alles was man bisher gemacht hat in die Liste
+    // in die totallist
 
     if (currentElement === " ") {
       totallist.push(currentlist.join(""))
@@ -337,7 +337,7 @@ export function aufgabe17(args) {
       currentlist.push(currentElement)
     }
   }
-  //wir schreiben alles was wir noch bis zum ende gelesen haben in die Liste
+  //Alles in die Liste schreiben was man bis am ende gelesen hat.
   totallist.push(currentlist.join(""))
   return totallist
 }
@@ -362,7 +362,7 @@ export function aufgabe18(args) {
   result.push(nameAndAge[1])
   result.push(" Jahre alt.")
 
-  // Wie immer geben wir das Resultat als Text zurück
+  // Das Resultat immer als Text zurückgeben
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe18] ", aufgabe18)
