@@ -600,28 +600,31 @@ export function aufgabe28(args) {
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
 
 export function aufgabe29(args) {
-  let summe = 0
-  let currentZahl = ""
-  const input = args
+  let summe = 0 // um Zahlen zusammenzuzählen
+  let currentZahl = "" //speichert die aktuelle Zahl
+  const input = args // speichert den Wert von args in der Variable input ab.
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (
-      currentElement.charCodeAt(0) >= 48 &&
-      currentElement.charCodeAt(0) <= 57
+      currentElement.charCodeAt(0) >= 48 && // 48 ist die ASCII-Wert von 0
+      currentElement.charCodeAt(0) <= 57 // 57 ist die ASCII-Wert von 9
+      //wenn das Zeichen eine Zahl ist von dem Ascii-Code 48 bis 57
     ) {
       currentZahl += currentElement
     } else if (currentZahl !== "") {
-      summe += parseInt(currentZahl)
-      currentZahl = ""
+      //wenn currentZahl nicht leer ist
+      summe += parseInt(currentZahl) // addiert die aktuelle Zahl zu einer Summe
+      currentZahl = "" // enthält noch keinen Wert
     }
   }
 
   if (currentZahl !== "") {
-    summe += parseInt(currentZahl)
+    //wenn currentZahl nicht leer ist
+    summe += parseInt(currentZahl) // addiert die aktuelle Zahl zu einer Summe
   }
 
-  return summe
+  return summe // gibt die Summe der Zahlen zurück
 }
 linkupExerciseHandler("[data-click=aufgabe29]", aufgabe29)
 
