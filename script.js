@@ -664,15 +664,16 @@ linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
 
 export function eigeneaufgabe(args) {
   const input = args
-  const mapping = { e: 1, a: 2, f: 3, i: 4, n: 5, t: 6 }
+  const mapping = { e: 1, a: 2, f: 3, i: 4, n: 5, t: 6 } // die Zahlen ersetzten die Buchstaben, d.h e wird durch 1 ersetzt usw. Mapping wird zum einsetzten von Zahlen und Buchstaben benutzt.
   const result = []
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (mapping[currentElement]) {
-      result.push(mapping[currentElement])
+      // wenn das Zeichen in der Mapping (in der oben definierten Variable) existiert
+      result.push(mapping[currentElement]) //hängt die Zahlen an und ersetzt die Buchstaben
     } else {
-      result.push(currentElement)
+      result.push(currentElement) //hängt die Buchstaben an
     }
   }
   return result.join("")
@@ -683,7 +684,7 @@ export function Eigeneaufgabe(args) {
   //Jedes Zeichen sollte verfünfacht werden
   const input = args
   const result = []
-  let count = 0
+  let count = 0 // Variabel um zu wissen wie viele Buchstaben verfünfacht wurden und fängt bei 0 an
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -693,9 +694,10 @@ export function Eigeneaufgabe(args) {
     result.push(currentElement)
     result.push(currentElement)
     result.push(currentElement)
+    //verfünfacht die Buchstaben
   }
 
-  return result.join("")
+  return result.join("") // gibt das Ergebnis zurück
 }
 
 linkupExerciseHandler("[data-click=Eigeneaufgabe]", Eigeneaufgabe)
