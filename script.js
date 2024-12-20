@@ -597,20 +597,14 @@ export function Eigeneaufgabe(args) {
 
 linkupExerciseHandler("[data-click=Eigeneaufgabe]", Eigeneaufgabe)
 
-export function aufgabe30(args) {
+export function aufgabe29(args) {
   const input = args
   const result = []
-  //finde alle Zahlen und addiere diese
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (!isNaN(currentElement)) {
-      result.push(currentElement)
-    }
-  }
 
   return result.join("")
 }
-linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
+
+linkupExerciseHandler("[data-click=aufgabe29]", aufgabe29)
 export function Bubblesort(args) {
   const text = args
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
