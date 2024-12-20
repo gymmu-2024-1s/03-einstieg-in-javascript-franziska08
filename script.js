@@ -597,6 +597,20 @@ export function Eigeneaufgabe(args) {
 
 linkupExerciseHandler("[data-click=Eigeneaufgabe]", Eigeneaufgabe)
 
+export function aufgabe30(args) {
+  const input = args
+  const result = []
+  //finde alle Zahlen und addiere diese
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (!isNaN(currentElement)) {
+      result.push(currentElement)
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
 export function Bubblesort(args) {
   const text = args
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
@@ -654,24 +668,3 @@ export function Radixsort(args) {
 }
 
 linkupExerciseHandler("[data-click=Radixsort]", Radixsort)
-
-function Bucketsort(args) {
-  let n = args.length,
-    buckets = Array.from({ length: n }, () => [])
-
-  // Verteile die Elemente auf die Buckets
-  arr.forEach((num) => buckets[Math.floor(n * num)].push(num))
-
-  // Sortiere die Buckets und füge sie wieder zusammen
-  args.length = 0
-  buckets.forEach((bucket) => {
-    insertionSort(bucket)
-    args.push(...bucket)
-  })
-}
-
-let args = [0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434]
-bucketSort(args)
-console.log("Sorted array is:", args.join(" "))
-
-linkupExerciseHandler("[data-click=bucketSort]", Bucketsort)
