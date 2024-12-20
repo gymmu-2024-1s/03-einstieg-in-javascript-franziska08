@@ -562,6 +562,7 @@ linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
 export function aufgabe29(args) {
   let summe = 0
   let currentZahl = ""
+  const input = args
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -582,7 +583,6 @@ export function aufgabe29(args) {
 
   return summe
 }
-
 linkupExerciseHandler("[data-click=aufgabe29]", aufgabe29)
 
 export function eigeneaufgabe(args) {
