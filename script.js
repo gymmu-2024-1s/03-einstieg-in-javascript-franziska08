@@ -559,6 +559,32 @@ export function aufgabe28(args) {
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
 
+export function aufgabe29(args) {
+  let summe = 0
+  let currentZahl = ""
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (
+      currentElement.charCodeAt(0) >= 48 &&
+      currentElement.charCodeAt(0) <= 57
+    ) {
+      currentZahl += currentElement
+    } else if (currentZahl !== "") {
+      summe += parseInt(currentZahl)
+      currentZahl = ""
+    }
+  }
+
+  if (currentZahl !== "") {
+    summe += parseInt(currentZahl)
+  }
+
+  return summe
+}
+
+linkupExerciseHandler("[data-click=aufgabe29]", aufgabe29)
+
 export function eigeneaufgabe(args) {
   const input = args
   const mapping = { e: 1, a: 2, f: 3, i: 4, n: 5, t: 6 }
@@ -597,14 +623,6 @@ export function Eigeneaufgabe(args) {
 
 linkupExerciseHandler("[data-click=Eigeneaufgabe]", Eigeneaufgabe)
 
-export function aufgabe29(args) {
-  const input = args
-  const result = []
-
-  return result.join("")
-}
-
-linkupExerciseHandler("[data-click=aufgabe29]", aufgabe29)
 export function Bubblesort(args) {
   const text = args
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
