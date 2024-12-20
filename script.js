@@ -678,7 +678,7 @@ export function eigeneaufgabe(args) {
   }
   return result.join("")
 }
-linkupExerciseHandler("[data-click=eigeneaufgabe]", eigeneaufgabe) //Von Codium verbessert, damit es auch funktioniert hat
+linkupExerciseHandler("[data-click=eigeneaufgabe]", eigeneaufgabe) //Von Codium verbessert
 
 export function Eigeneaufgabe(args) {
   //Jedes Zeichen sollte verfünfacht werden
