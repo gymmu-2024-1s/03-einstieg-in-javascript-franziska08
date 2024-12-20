@@ -313,11 +313,12 @@ export function aufgabe15(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === " ") {
-      break
+      //wenn das Element ein Leerzeichen ist
+      break //bricht die Schleife ab
     }
-    result.push(currentElement)
+    result.push(currentElement) //hängt das aktuelle Zeichen an
   }
-  return result.join("")
+  return result.join("") //gibt das Ergebnis dann zurück
 }
 linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 
@@ -328,19 +329,20 @@ export function aufgabe16(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "$") {
-      break
+      //wenn das Element ein "$" ist
+      break //bricht die Schleife ab
     }
-    result.push(currentElement)
+    result.push(currentElement) //hängt das aktuelle Zeichen an
   }
-  return result.join("")
+  return result.join("") //gibt das Ergebnis dann zurück
 }
 
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
 export function aufgabe17(args) {
-  const input = args
-  const totallist = []
-  const currentlist = []
+  const input = args //speichert den Wert von args in der Variable input ab.
+  const totallist = [] // das ist die Totalliste
+  const currentlist = [] // das ist die aktuelle Liste
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
@@ -348,15 +350,17 @@ export function aufgabe17(args) {
     // in die totallist
 
     if (currentElement === " ") {
-      totallist.push(currentlist.join(""))
-      currentlist.length = 0
+      //wenn das Element ein Leerzeichen ist
+      totallist.push(currentlist.join("")) // schreibt alles was man bisher gemacht hat in die Totallist
+      currentlist.length = 0 // leert die aktuelle Liste
     } else {
-      currentlist.push(currentElement)
+      //wenn das Element kein Leerzeichen ist
+      currentlist.push(currentElement) //hängt das aktuelle Zeichen an
     }
   }
   //Alles in die Liste schreiben was man bis am ende gelesen hat.
-  totallist.push(currentlist.join(""))
-  return totallist
+  totallist.push(currentlist.join("")) // schreibt alles was man bisher gemacht hat in die Totallist
+  return totallist //gibt die Totallist dann zurück
 }
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
@@ -364,20 +368,20 @@ export function aufgabe18(args) {
   const input = args
 
   // Wir können die Aufgabe 17 verwenden um eine Liste zu bekommen.
-  const nameAndAge = aufgabe17(input)
+  const nameAndAge = aufgabe17(input) // das ist die Liste mit Name und Alter von Aufgabe 17
 
-  // Wir generieren unsere Ausgabeliste
+  // generiere die Ausgabeliste
   const result = []
 
-  // Hier schreiben wir ganze Worte in die Liste, auch das ist möglich
-  result.push("Sie heissen ")
+  // Hier schreibt man ganze Worte in die Liste, auch das ist möglich
+  result.push("Sie heissen ") //hängt "Sie heissen " an
 
-  // Wir setzen die Liste dann so zusammen, dass der Name und das Alter an der
-  // richtigen Stelle eingefügt werden.
-  result.push(nameAndAge[0])
-  result.push(" und sind ")
-  result.push(nameAndAge[1])
-  result.push(" Jahre alt.")
+  // die Liste so zusammensetzten, dass der Name und das Alter an der
+  // richtigen Stelle eingefügt wird.
+  result.push(nameAndAge[0]) //hängt den Namen an
+  result.push(" und sind ") //hängt " und sind " an
+  result.push(nameAndAge[1]) //hängt das Alter an
+  result.push(" Jahre alt.") //hängt " Jahre alt." an
 
   // Das Resultat immer als Text zurückgeben
   return result.join("")
