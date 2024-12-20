@@ -70,7 +70,7 @@ export function aufgabe03(args) {
     if (currentElement === "e") {
       count = count + 1 //zählt alle "e"
     } else if (currentElement === "E") {
-      count++ //kurzform von count = count+1
+      count++ //kurzform von count+1
     }
   }
 
@@ -213,9 +213,10 @@ export function aufgabe10(args) {
   for (let i = 0; i < input.length; i++) {
     //Teste, ob die Eingabe ein korrekter RGB Hexcode ist.
     if (input[i] === "#") {
-      return true
+      return true //gibt true zurück wenn es stimmt
     } else {
-      return false
+      //wenn nicht
+      return false //gibt false zurück wenn es nicht stimmt
     }
   }
 }
@@ -265,7 +266,7 @@ export function aufgabe13(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      lastIndex = i // Wenn e gefunden wird der Index gespeichert
+      lastIndex = i // Wenn e gefunden wird, wird der Index gespeichert
     }
   }
   return lastIndex // gibt den Index zurück
@@ -327,7 +328,7 @@ export function aufgabe17(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    //Wenn manauf ein Leerzeichen trifft, dann schreibt man alles was man bisher gemacht hat in die Liste
+    //Wenn manauf ein Leerzeichen trifft, dann schreibt man alles was man bisher gemacht hat
     // in die totallist
 
     if (currentElement === " ") {
@@ -381,7 +382,7 @@ export function aufgabe19(args) {
   // jedes Zeichen sollte verdoppelt werden
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    result.push(currentElement)
+    result.push(currentElement) // verdoppelt das Zeichen
     result.push(currentElement)
   }
   return result.join("")
@@ -391,7 +392,7 @@ export function aufgabe20(args) {
   const input = args
   const result = []
 
-  let allGood = true
+  let allGood = true //gibt true an, wenn alles gut ist
 
   //prüfe ob nach jeden "." ein Leerschlag kommt.
   for (let i = 0; i < input.length; i++) {
@@ -401,11 +402,11 @@ export function aufgabe20(args) {
       if (input[i + 1] === " ") {
         //do nothing
       } else {
-        allGood = false
+        allGood = false // gibt false an, wenn das nicht stimmt
       }
     }
   }
-  return allGood
+  return allGood //gibt true zurück, wenn allGood true ist
 }
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
 
@@ -428,7 +429,7 @@ export function aufgabe22(args) {
   //Sollte alle Zeichen aus der Eingabe '_' ersetzten
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    result.push("_")
+    result.push("_") //gibt "_" an
   }
   return result.join("")
 }
