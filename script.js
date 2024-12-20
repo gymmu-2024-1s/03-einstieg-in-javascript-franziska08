@@ -45,13 +45,13 @@ export function aufgabe01(args) {
 linkupExerciseHandler("[data-click=aufgabe01]", aufgabe01)
 
 export function aufgabe02(args) {
-  const input = args
+  const input = args //speichert den Wert von args in der Variable input ab.
   const result = [] //das ist die Resultatliste.
   //Läuft Zeichen für Zeichen über den ganzen Text.
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    const upperCaseLetter = currentElement.toUpperCase()
+    const upperCaseLetter = currentElement.toUpperCase() // gibt das Zeichen in Grossbuchstaben zurück
     //hänge das aktuelle Zeichen doppelt an.
     result.push(upperCaseLetter)
   }
@@ -61,15 +61,18 @@ export function aufgabe02(args) {
 linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
 
 export function aufgabe03(args) {
-  const input = args
-  const result = []
+  const input = args //speichert den Wert von args in der Variable input ab.
+  const result = [] // das ist die Resultatliste
 
-  let count = 0
+  let count = 0 // zellt die Anzahl der "e"
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    // läuft Zeichen für Zeichen des ganzen Text ab
+    const currentElement = input[i] // speichert das aktuelle Zeichen in der Variable "currentElement"
     if (currentElement === "e") {
-      count = count + 1 //zählt alle "e"
+      //wenn e das aktuelle Zeichen ist
+      count = count + 1 //zählt alle "e" zusammen
     } else if (currentElement === "E") {
+      //wenn E das aktuelle Zeichen ist
       count++ //kurzform von count+1
     }
   }
@@ -79,38 +82,40 @@ export function aufgabe03(args) {
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 
 export function aufgabe04(args) {
-  const input = args
-  const result = []
+  const input = args // speichert den Wert von args in der Variable input
+  const result = [] // das ist die Resultatliste
   //Man filtert die Eingabe so, dass nur noch Buchstaben und Leerzeichen übrig
   //bleiben
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    const ascii = currentElement.charCodeAt(0)
+    const ascii = currentElement.charCodeAt(0) //gibt den ASCII-Code vom aktuellen Zeichens zurück
 
     if (ascii >= 65 && ascii <= 90) {
+      //wenn der ASCII-Code zwischen 65 und 90 liegt
       //Grossbuchstabe
       result.push(currentElement)
     } else if (ascii >= 97 && ascii <= 122) {
+      //wenn der ASCII-Code zwischen 97 und 122 liegt
       // Kleinbuchstabe
       result.push(currentElement)
     } else if (ascii === 32) {
+      //wenn der ASCII-Code 32 ist
       // Leerzeichen
-      result.push(currentElement)
+      result.push(currentElement) //hängt das Leerzeichen an
     }
   }
 
-  //Jetzt kann man noch mehrere Leerzeichen am Stück haben, die muss man
-  //noch filtern
+  //Jetzt kann man noch mehrere Leerzeichen am Stück haben, die muss man noch filtern
 
-  const result2 = []
+  const result2 = [] //ist die Resultatliste 2
   for (let i = 0; i < result.length; i++) {
     const currentElement = result[i]
-    const nextElement = result[i + 1]
+    const nextElement = result[i + 1] // gibt das nächste Zeichen an der Stelle +1 an
 
     if (currentElement === " " && nextElement === " ") {
       //hier sind 2 Leerzeichen hintereinadner , deshalb ignoriere das erste
     } else {
-      result2.push(currentElement)
+      result2.push(currentElement) // hängt das Zeichen an
     }
   }
   //Jetzt kann man die Leerzeichen zählen
@@ -118,11 +123,11 @@ export function aufgabe04(args) {
   for (let i = 0; i < result.length; i++) {
     const currentElement = result2[i]
     if (currentElement === " ") {
-      count = count + 1
+      count = count + 1 // Langeform von count++ // zählt die Leerzeichen
     }
   }
   //Da es ein Wort mehr wie Leerzeichen gibt, gibt man Leerzeichen+1 zurück
-  return count + 1
+  return count + 1 //gibt die Anzahl der Leerzeichen zurück
 }
 
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
@@ -157,8 +162,11 @@ export function aufgabe07(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "u") {
+      // wenn das Element "u" ist
       if (input[i + 1] === "n") {
+        //wenn das Element "n" ist
         if (input[i + 2] === "d") {
+          //wenn das Element "d" ist
           return true //gibt true zurück, wenn das Wort erhalten ist
         }
       }
