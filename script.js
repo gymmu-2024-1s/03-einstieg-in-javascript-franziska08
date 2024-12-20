@@ -463,14 +463,15 @@ linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 export function aufgabe23(args) {
   const input = args
   const result = [] //Leere Liste, in der wir das Resultat anhängen
-  const firstelement = input[0]
+  const firstelement = input[0] //Speichere das erste Zeichen
 
   // Hänge firstelement an die Liste an
-  result.push(firstelement)
+  result.push(firstelement) //Schreibt das erste Zeichen an Anfang
 
   for (let i = 0; i < input.length; i++) {
+    //Schreibt die restlichen Zeichen auf
     const currentElement = input[i]
-    result.push(currentElement)
+    result.push(currentElement) //hängt das aktuelle Zeichen an
   }
 
   result.push(firstelement) //Schreibe das erste Zeichen am Ende
@@ -488,15 +489,18 @@ export function aufgabe24(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === 0) {
-      result.push(input[input.length - 1])
+      // wenn das aktuelle Zeichen == 0 ist
+      result.push(input[input.length - 1]) //hängt das letzte Zeichen an
     } else if (i === input.length - 1) {
-      result.push(input[0])
+      // wenn das aktuelle Zeichen == der letzte ist
+      result.push(input[0]) //hängt das erste Zeichen an
     } else {
-      result.push(currentElement)
+      // wenn das aktuelle Zeichen nicht 0 oder der letzte ist
+      result.push(currentElement) //hängt das aktuelle Zeichen an
     }
   }
 
-  return result.join("")
+  return result.join("") //gibt das Ergebnis dann zurück
 }
 linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
 
@@ -508,6 +512,7 @@ export function aufgabe25(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === Math.floor(input.length / 2)) {
+      // wenn das aktuelle Zeichen == der Mitte ist
       // do nothing
     } else {
       result.push(currentElement)
