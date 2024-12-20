@@ -706,19 +706,20 @@ export function Bubblesort(args) {
   const text = args
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
   for (let i = 0; i < list.length - 1; i++) {
-    const currentElement = list[i]
-    const nextElement = list[i + 1]
+    const currentElement = list[i] // die aktuelle Position
+    const nextElement = list[i + 1] // Die Position des nächsten Elements
     if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      // prüft die Reihenfolge
       // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
-      const tmp = list[i + 1]
-      list[i + 1] = list[i]
-      list[i] = tmp
+      const tmp = list[i + 1] //Speichert das nächste Element in einer temporanen Variable
+      list[i + 1] = list[i] //Kopiert das aktuelle Element in die nächste Position
+      list[i] = tmp //Setzt das gespeicherte nächste Element an die aktuelle Position
       i = -1 // starte von vorne wenn etwas vertauscht wurde.
     }
   }
-  const result = list.join("")
+  const result = list.join("") // Wandelt die Liste in ein String
 
-  return result
+  return result // gibt das Ergebnis zurück
 }
 linkupExerciseHandler("[data-click=Bubblesort]", Bubblesort)
 
