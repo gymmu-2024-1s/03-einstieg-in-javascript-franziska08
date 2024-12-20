@@ -392,20 +392,22 @@ export function aufgabe19(args) {
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    //sollte alle 'aa' entfernen
+    const currentElement = input[i] // holt das aktuelle Zeichen raus
 
     //sollte 'aa' heissen.
     if (currentElement === "aa") {
+      //wenn das aktuelle Zeichen 'aa' ist
       result.push("aa") //Gibt "aa" wieder an
     }
   }
   // jedes Zeichen sollte verdoppelt werden
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    const currentElement = input[i] // holt das aktuelle Zeichen raus
     result.push(currentElement) // verdoppelt das Zeichen
     result.push(currentElement)
   }
-  return result.join("")
+  return result.join("") //gibt das Ergebnis dann zurück
 }
 linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
 export function aufgabe20(args) {
