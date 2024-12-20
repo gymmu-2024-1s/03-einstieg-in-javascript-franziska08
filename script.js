@@ -741,8 +741,8 @@ export function Selectionsort(args) {
 
     // Das kleinste Element an die richtige Position verschieben
     let temp = input[i] // speichert das aktuelle Element mit einer temporären Variable
-    input[i] = input[min_idx] // kopiert das kleinste Element an die richtige Position
-    input[min_idx] = temp //Setzt das ursprünglich gespeicherte Element  (i) an die Position "min_idx."
+    input[i] = input[min_idx] // Setzt das Element von der Position "min_idx" an die Position "i".
+    input[min_idx] = temp //Setzt das ursprünglich gespeicherte Element "i" an die Position "min_idx."
   }
   return input // gibt das Ergebnis zurück
 }
@@ -754,16 +754,16 @@ export function Bucketsort(args) {
   const list = text.split("") // Wandelt den Text in eine Liste um
 
   // 256 Buckets für alle ASCII-Zeichen (von 0 bis 255)
-  let buckets = new Array(256).fill().map(() => [])
+  let buckets = new Array(256).fill().map(() => []) // Erstellt ein Array mit 256 leeren Arrays
 
   // Elemente in die Buckets verteilen
   for (let i = 0; i < list.length; i++) {
     let index = list[i].charCodeAt(0) // Die ASCII-Werte der Zeichen
-    buckets[index].push(list[i])
+    buckets[index].push(list[i]) // Die Zeichen werden in die entsprechenden Buckets eingefügt
   }
 
   // Eimer sortieren und zusammenführen
-  return buckets
+  return buckets // gibt das Ergebnis zurück
     .map((bucket) => bucket.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))) // Sortiere jedes Bucket
     .flat() // Alle sortierten Buckets werden flach zusammengeführt
     .join("") // Als String zusammenfügen
