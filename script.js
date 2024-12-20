@@ -594,6 +594,40 @@ export function aufgabe29(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe29]", aufgabe29)
 
+export function aufgabe30(args) {
+  const input = args
+  const result = []
+  //Sollte das Wort 'Android' erkennen
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "A") {
+      // wenn das Element "A" ist
+      if (input[i + 1] === "n") {
+        //wenn das Element "n" ist
+        if (input[i + 2] === "d") {
+          //wenn das Element "d" ist
+          if (input[i + 3] === "r") {
+            //wenn das Element "r" ist
+            if (input[i + 4] === "o") {
+              //wenn das Element "o" ist
+              if (input[i + 5] === "i") {
+                //wenn das Element "i" ist
+                if (input[i + 6] === "d") {
+                  //wenn das Element "d" ist
+                  return true //gibt true zurück, wenn das Wort erhalten ist
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return false // gibt false zuück wenn das Wort nicht erhalten ist
+}
+
+linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
+
 export function eigeneaufgabe(args) {
   const input = args
   const mapping = { e: 1, a: 2, f: 3, i: 4, n: 5, t: 6 }
