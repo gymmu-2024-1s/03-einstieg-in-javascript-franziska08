@@ -492,7 +492,7 @@ export function aufgabe24(args) {
       // wenn das aktuelle Zeichen == 0 ist
       result.push(input[input.length - 1]) //hängt das letzte Zeichen an
     } else if (i === input.length - 1) {
-      // wenn das aktuelle Zeichen == der letzte ist
+      // wenn das aktuelle Zeichen = der letzte ist
       result.push(input[0]) //hängt das erste Zeichen an
     } else {
       // wenn das aktuelle Zeichen nicht 0 oder der letzte ist
@@ -512,7 +512,7 @@ export function aufgabe25(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === Math.floor(input.length / 2)) {
-      // wenn das aktuelle Zeichen == der Mitte ist
+      // wenn das aktuelle Zeichen = der Mitte ist
       // do nothing
     } else {
       result.push(currentElement)
@@ -529,9 +529,11 @@ export function aufgabe26(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === 0) {
-      result.push(input[1])
+      // wenn das aktuelle Zeichen = 0 ist
+      result.push(input[1]) // hängt das zweite Zeichen an
     } else if (i === 1) {
-      result.push(input[0])
+      // wenn das aktuelle Zeichen = 1 ist
+      result.push(input[0]) // hängt das erste Zeichen an
     } else {
       //do nothing
       result.push(currentElement)
@@ -546,45 +548,52 @@ export function aufgabe27(args) {
   const result = []
   //sollte testen ob die Eingabe eine Zahl ist
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    const currentElement = input[i] // holt das aktuelle Zeichen raus
     if (currentElement >= "0" && currentElement <= "9") {
-      result.push(currentElement)
+      //wenn das aktuelle Zeichen eine Zahl ist
+      result.push(currentElement) //gibt das Zeichen wieder an
     }
   }
   //sollte testen ob die Eingabe keine Zahl ist
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    const currentElement = input[i] // holt das aktuelle Zeichen raus
     if (currentElement < "0" || currentElement > "9") {
-      return false
+      //wenn das aktuelle Zeichen keine Zahl ist
+      return false // gibt false zurück wenn es eine Zahl ist
     }
   }
-  return result.join("")
+  return result.join("") //gibt das Ergebnis zurück
 }
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function aufgabe28(args) {
   const input = args
-  let num1, num2
+  let num1, num2 // Variablen zur Speicherung der ersten beiden Zahlen
 
   // Suche nach den ersten beiden Zahlen im Array
   for (let i = 0; i < input.length; i++) {
+    // Schleife durch die Eingabe
     const currentElement = input[i]
     if (!isNaN(currentElement)) {
+      // Wenn das aktuelle Zeichen eine Zahl ist
       // Überprüfe, ob das Element eine Zahl ist
       if (!num1) {
-        num1 = parseInt(currentElement)
+        // Wenn es eine Zahl ist
+        num1 = parseInt(currentElement) // Speichere die Zahl in num1 ab
       } else if (!num2) {
-        num2 = parseInt(currentElement)
-        break
+        // Wenn es die zweite Zahl ist
+        num2 = parseInt(currentElement) // Speichere die Zahl in num2 ab
+        break //bricht die Schleife ab
       }
     }
   }
 
   // Wenn zwei Zahlen gefunden wurden, addiere sie
   if (num1 !== undefined && num2 !== undefined) {
-    return num1 + num2
+    // wenn num1 und num2 nicht "undefined" sind (wenn die Zahlen gefunden werden)
+    return num1 + num2 // gibt die Summe der Zahlen zurück
   } else {
-    return "Keine zwei Zahlen gefunden"
+    return "Keine zwei Zahlen gefunden" // gibt "Keine zwei Zahlen gefunden" zurück, wenn es keine Zahlen zusammenrechnen kann
   }
 }
 
