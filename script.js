@@ -711,7 +711,7 @@ export function Bubblesort(args) {
     if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
       // prüft die Reihenfolge
       // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
-      const tmp = list[i + 1] //Speichert das nächste Element in einer temporanen Variable
+      const tmp = list[i + 1] //Speichert das nächste Element in einer temporärenen Variable
       list[i + 1] = list[i] //Kopiert das aktuelle Element in die nächste Position
       list[i] = tmp //Setzt das gespeicherte nächste Element an die aktuelle Position
       i = -1 // starte von vorne wenn etwas vertauscht wurde.
@@ -724,42 +724,30 @@ export function Bubblesort(args) {
 linkupExerciseHandler("[data-click=Bubblesort]", Bubblesort)
 
 export function Selectionsort(args) {
-  const input = args.split("")
-  const result = []
-  let n = input.length
+  const input = args.split("") //Der String  wird in ein Array von Zeichen aufgeteilt
+  const result = [] // Erstellt ein leeres Array
+  let n = input.length // Die Länge des Arrays wird in n gespeichert
   for (let i = 0; i < n - 1; i++) {
-    // Assume the current position holds
-    // the minimum element
-    let min_idx = i
+    // wenn das Element das kleinste ist
+    let min_idx = i // speichert die Position des minimalen Elements
 
-    // Iterate through the unsorted portion
-    // to find the actual minimum
+    //durchläuft den unsortiereten Teil des Arrays und sucht das eigentlich kleinste Element
     for (let j = i + 1; j < n; j++) {
       if (input[j] < input[min_idx]) {
-        // Update min_idx if a smaller element is found
-        min_idx = j
+        // Verbesser min_idx, wenn ein kleineres Element gefunden wird.
+        min_idx = j // speichert die Position des minimalen Elements
       }
     }
 
-    // Move minimum element to its
-    // correct position
-    let temp = input[i]
-    input[i] = input[min_idx]
-    input[min_idx] = temp
+    // Das kleinste Element an die richtige Position verschieben
+    let temp = input[i] // speichert das aktuelle Element mit einer temporären Variable
+    input[i] = input[min_idx] // kopiert das kleinste Element an die richtige Position
+    input[min_idx] = temp //Setzt das ursprünglich gespeicherte Element  (i) an die Position "min_idx."
   }
-  return input
+  return input // gibt das Ergebnis zurück
 }
 
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
-
-export function Radixsort(args) {
-  const input = args
-  const result = []
-  for (let i = 0; i < input.length; i++) {}
-  return result
-}
-
-linkupExerciseHandler("[data-click=Radixsort]", Radixsort)
 
 export function Bucketsort(args) {
   const text = args
