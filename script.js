@@ -184,13 +184,14 @@ export function aufgabe08(args) {
     const currentElement = input[i]
 
     if (currentElement === "e") {
+      //wenn das Element "e" ist
       //do nothing
       result.push(3) //3 ersetzt "e"
     } else {
-      result.push(currentElement)
+      result.push(currentElement) //hängt das aktuelle Zeichen an
     }
   }
-  return result.join("")
+  return result.join("") //gibt das Ergebnis zurück
 }
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
@@ -203,14 +204,15 @@ export function aufgabe09(args) {
 
   for (let i = 0; i < input.length; i++) {
     // "i" ersetzt 0. Dann wird die Kurzform angewendet.
-    const currentElement = input[i]
+    const currentElement = input[i] // speichert das aktuelle Zeichen in der Variable "currentElement".
     count = count + 1
   }
 
   if (count === 6) {
-    is6long = true // bestimmt ob die Zeichenanzahl dieser Anzahl entspricht
+    //wenn die Zeichenanzahl 6 ist
+    is6long = true // bestimmt ob die Zeichenanzahl 6 dieser Anzahl entspricht
   }
-  return is6long
+  return is6long //gibt true oder false zurück, wenn der Text 6 Zeichen lang ist oder nicht
 }
 linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 
@@ -221,6 +223,7 @@ export function aufgabe10(args) {
   for (let i = 0; i < input.length; i++) {
     //Teste, ob die Eingabe ein korrekter RGB Hexcode ist.
     if (input[i] === "#") {
+      //wenn das Zeichen "#" ist
       return true //gibt true zurück wenn es stimmt
     } else {
       //wenn nicht
@@ -239,15 +242,17 @@ export function aufgabe11(args) {
   // Speichere den ASCII-Code vom ersten Zeichen
   asciiCode = input.charCodeAt(0)
 
-  //Sollte 'null' zurückgeben wenn mehr wie ein Zeichen gegeben sind
+  //Sollte 'null' zurückgeben wenn mehr wie ein Zeichen gegeben ist
   if (input.length > 1) {
-    return null
+    //wenn mehr als ein Zeichen gegeben ist
+    return null //gibt null zurück
 
     //Sollte 'null' zurückgeben wenn keine Eingabe gegeben ist.
   } else if (input.length === 0) {
-    return null
+    //wenn keine Eingabe gegeben ist
+    return null // gibt null zurück
   }
-  return asciiCode
+  return asciiCode // gibt in Ascii-Code zurück
 }
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
 
@@ -260,6 +265,7 @@ export function aufgabe12(args) {
 
     //Suche die Position des ersten "e"s
     if (currentElement === "e") {
+      //wenn das Element "e" ist
       return i // er springt aus der Funktion raus, wenn e gefunden wird bricht es ab und es wird nicht mehr ausgeführt
     }
   }
@@ -269,8 +275,8 @@ linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe13(args) {
   const input = args
-  let lastIndex = -1
-  // Suche die Position des letzten "e"s
+  let lastIndex = -1 // speichert den Index des letzten "e"
+  // Suche die Position des letzten "e"
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
@@ -288,10 +294,12 @@ export function aufgabe14(args) {
   // Suche die Postition des dritten "e"s
   for (let i = 0; i < input.length; i++) {
     if (input[i] === "e") {
-      count++
+      // wenn das Element "e" ist
+      count++ // zählt alle "e" zusammen
     }
     if (count === 3) {
-      return i
+      // wenn es 3 e's gibt
+      return i // gibt die Position des dritten "e" zurück
     }
   }
   return -1 //gibt -1 an, wenn dort weniger als 3 e's sind
