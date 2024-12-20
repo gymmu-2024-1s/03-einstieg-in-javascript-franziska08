@@ -420,8 +420,10 @@ export function aufgabe20(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === ".") {
+      // prüft ob das Zeichen ein "." ist.
       //prüfe ob das nächste Zeichen ein Leerschlag ist.
       if (input[i + 1] === " ") {
+        // prüft ob das Zeichen ein " " ist
         //do nothing
       } else {
         allGood = false // gibt false an, wenn das nicht stimmt
@@ -437,11 +439,12 @@ export function aufgabe21(args) {
   const result = []
   //kehre die Eingabe um
   for (let i = input.length - 1; i >= 0; i--) {
+    //kehrt die Eingabe um
     const currentElement = input[i]
-    result.push(currentElement)
+    result.push(currentElement) //hängt das aktuelle Zeichen an
   }
 
-  return result.join("")
+  return result.join("") //gibt das Ergebnis dann zurück
 }
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
 
